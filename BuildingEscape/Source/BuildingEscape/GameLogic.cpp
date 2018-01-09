@@ -17,7 +17,6 @@ void AGameLogic::BeginPlay()
 {
 	Super::BeginPlay();
 	
-	PlayerActor = GetWorld()->GetFirstPlayerController()->GetPawn();
 }
 
 // Called every frame
@@ -25,14 +24,4 @@ void AGameLogic::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	UpdatePlayerActorLocation();
 }
-
-void AGameLogic::UpdatePlayerActorLocation()
-{
-	FVector PlayerLocation = PlayerActor->GetActorLocation();
-	PlayerLocation.Z = PLAYER_LOCATION_Z;
-	PlayerActor->SetActorLocation(PlayerLocation);
-	//UE_LOG(LogTemp, Warning, TEXT("Player actor location set to %s"), *PlayerLocation.ToString());
-}
-

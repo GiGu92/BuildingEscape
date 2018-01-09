@@ -16,17 +16,11 @@ public:
 	AGameLogic();
 
 protected:
-	AActor* PlayerActor;
-	const float PLAYER_LOCATION_Z = 180.f;
-
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
-private:
-	void UpdatePlayerActorLocation();
 
 };
